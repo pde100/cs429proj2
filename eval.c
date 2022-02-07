@@ -405,7 +405,7 @@ static void eval_node(node_t *nptr) {
                             nptr->val.ival = nptr->children[0]->val.ival * nptr->children[1]->val.ival;
                         } else {
                             //code to concat n times
-                            if(nptr->children[1]->val.ival == 0) {
+                            if(nptr->children[1]->val.ival <= 0) {
                                 handle_error(ERR_EVAL);
                                 break;
                             } else {

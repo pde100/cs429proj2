@@ -604,5 +604,15 @@ char *strrev(char *str) {
  */
 void cleanup(node_t *nptr) {
     // Week 2 TODO: Recursively free each node in the AST
+    if(nptr == NULL) {
+        return;
+    }
+    for(int i = 0; i < 3; i++) {
+        cleanup(nptr->children[i]);
+    }
+
+    free(nptr);
+
+    
     return;
 }

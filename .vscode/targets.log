@@ -1,0 +1,392 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2014 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Mon Feb  7 15:29:30 2022
+
+# Variables
+
+# makefile (from 'Makefile', line 20)
+TEST_WEEK_3 := tests/test_week3.txt
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# default
+.SHELLFLAGS := -c
+# makefile (from 'Makefile', line 7)
+CC_DL_OPTIONS = -rdynamic
+# environment
+VSCODE_AGENT_FOLDER = /u/pramitde/.vscode-server
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# default
+MAKE_VERSION := 4.1
+# makefile
+CURDIR := /u/pramitde/cs429/projects/proj2/ci-lab-pde100
+# makefile
+SHELL = /bin/sh
+# makefile (from 'Makefile', line 10)
+RM = /bin/rm -f
+# makefile (from 'Makefile', line 9)
+OD_FLAGS = -d -h -r -s -S -t 
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+# environment
+_ = /u/pramitde/.vscode-server/bin/83bd43bc519d15e50c4272c6cf5c1479df196a4d/node
+# makefile (from 'Makefile', line 17)
+HDRS := ci.h node.h
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/41503/bus
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 15)
+OBJS := ci.o handle_args.o interface.o lex.o parse.o eval.o print.o err_handler.o variable.o
+# environment
+VSCODE_CWD = /u/pramitde
+# environment
+SSH_CONNECTION = 10.145.238.60 49624 128.83.120.167 22
+# environment
+PATH = /u/pramitde/.vscode-server/bin/83bd43bc519d15e50c4272c6cf5c1479df196a4d/bin:/lusr/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/bin/mh:/lusr/share/hosts:/lusr/bin/tex:/lusr/games/bin:/lusr/opt/condor/bin:.
+# makefile (from 'Makefile', line 11)
+LD = gcc
+# environment
+XDG_RUNTIME_DIR = /run/user/41503
+# makefile (from 'Makefile', line 6)
+CC_SO_OPTIONS = -shared -fpic
+# makefile (from 'Makefile', line 8)
+OD = objdump
+# environment
+UBUNTU_MENUPROXY = 1
+# environment
+VSCODE_LOG_STACK = false
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile', line 4)
+CC_FLAGS = -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /u/pramitde/cs429/projects/proj2/ci-lab-pde100
+# environment
+VSCODE_IPC_HOOK_CLI = /run/user/41503/vscode-ipc-96779a86-9719-47ad-9abb-3bd855190670.sock
+# makefile (from 'Makefile', line 18)
+TEST_WEEK_1 := tests/test_week1.txt
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+GTK_MODULES = appmenu-gtk-module:appmenu-gtk-module
+# environment
+MANPATH = :/opt/puppetlabs/puppet/share/man
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/server/remoteExtensionHostProcess
+# environment
+HOME = /u/pramitde
+# environment
+LOGNAME = pramitde
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# automatic
++F = $(notdir $+)
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile (from 'Makefile', line 5)
+CC_OPTIONS = -c
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# makefile (from 'Makefile', line 14)
+SRCS := ci.c handle_args.c interface.c lex.c parse.c eval.c print.c err_handler.c variable.c
+# environment
+SHLVL = 3
+# makefile (from 'Makefile', line 3)
+CC = gcc
+# environment
+XDG_SESSION_ID = 2925
+# environment
+USER = pramitde
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from 'Makefile', line 19)
+TEST_WEEK_2 := tests/test_week2.txt
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+LANGUAGE = en_US:
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_CLIENT = 10.145.238.60 49624 22
+# environment
+MAIL = /u/pramitde/mailbox
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+BROWSER = /u/pramitde/.vscode-server/bin/83bd43bc519d15e50c4272c6cf5c1479df196a4d/bin/helpers/browser.sh
+# environment
+S_COLORS = auto
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+PS1 = yellow$ 
+# environment
+EDITOR = vi
+# environment
+LC_ALL = C
+# makefile (from 'Makefile', line 12)
+LIBS = -ldl
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH = /u/pramitde/.vscode-server/bin/83bd43bc519d15e50c4272c6cf5c1479df196a4d/remote/node_modules
+# default
+.RECIPEPREFIX := 
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+LANG = C
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# variable set hash-table stats:
+# Load=87/1024=8%, Rehash=0, Collisions=12/121=10%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 62, inode 3983533906): 28 files, no impossibilities.
+
+# 28 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+%.i: %.c
+#  recipe to execute (from 'Makefile', line 25):
+	${CC} ${CC_OPTIONS} -E ${CC_FLAGS} $<
+
+%.s: %.c
+#  recipe to execute (from 'Makefile', line 28):
+	${CC} ${CC_OPTIONS} -S ${CC_FLAGS} $<
+
+%.o: %.c
+#  recipe to execute (from 'Makefile', line 31):
+	${CC} ${CC_OPTIONS} ${CC_FLAGS} $<
+
+# 3 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+# Not a target:
+interface.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+handle_args.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ci.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: ci test_week1 test_week2 test_week3 clean
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+
+# Not a target:
+parse.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+test_week1: ci
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 41):
+	chmod +x driver.sh
+	./driver.sh ${TEST_WEEK_1}
+
+# Not a target:
+print.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-30 18:52:59.11696
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+err_handler.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+test_week2: ci
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 45):
+	chmod +x driver.sh
+	./driver.sh ${TEST_WEEK_2}
+
+# Not a target:
+node.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ 
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ci: ci.o handle_args.o interface.o lex.o parse.o eval.o print.o err_handler.o variable.o ci.h node.h
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-31 18:50:49.190001
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  recipe to execute (from 'Makefile', line 38):
+	${CC} ${CC_FLAGS} -o $@ ${OBJS}
+
+ci.o: ci.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'ci'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := ci.o
+# automatic
+# % := 
+# automatic
+# * := ci
+# automatic
+# + := ci.c
+# automatic
+# | := 
+# automatic
+# < := ci.c
+# automatic
+# ^ := ci.c
+# automatic
+# ? := ci.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
+#  recipe to execute (from 'Makefile', line 31):
+	${CC} ${CC_OPTIONS} ${CC_FLAGS} $<
+
+# Not a target:
+eval.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+variable.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 53):
+	${RM} *.o *.so _output*
+
+# Not a target:
+lex.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+test_week3: ci
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 49):
+	chmod +x driver.sh
+	./driver.sh ${TEST_WEEK_3}
+
+# Not a target:
+ci.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-30 18:52:59.121922
+#  File has been updated.
+#  Successfully updated.
+
+# files hash-table stats:
+# Load=21/1024=2%, Rehash=0, Collisions=0/59=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 50 / storage = 432 B / avg = 8 B
+# current buf: size = 8162 B / used = 432 B / count = 50 / avg = 8 B
+
+# strcache performance: lookups = 77 / hit rate = 35%
+# hash-table stats:
+# Load=50/8192=1%, Rehash=0, Collisions=2/77=3%
+# Finished Make data base on Mon Feb  7 15:29:30 2022
+
+ 

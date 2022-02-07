@@ -1,0 +1,21 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/u/pramitde/cs429/projects/proj2/ci-lab-pde100'
+gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror ci.c
+gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror handle_args.c
+gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror interface.c
+gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror lex.c
+gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror parse.c
+gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror eval.c
+gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror print.c
+gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror err_handler.c
+gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror variable.c
+gcc -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror -o ci ci.o handle_args.o interface.o lex.o parse.o eval.o print.o err_handler.o variable.o
+chmod +x driver.sh
+./driver.sh tests/test_week1.txt
+chmod +x driver.sh
+./driver.sh tests/test_week2.txt
+chmod +x driver.sh
+./driver.sh tests/test_week3.txt
+/bin/rm -f *.o *.so _output*
+make: Leaving directory '/u/pramitde/cs429/projects/proj2/ci-lab-pde100'
+ 

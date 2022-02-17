@@ -48,7 +48,9 @@ static void infer_type(node_t *nptr) {
             switch (nptr->tok) {
                 // For reference, the identity (do nothing) operator is implemented for you.
                 case TOK_IDENTITY:
+                    infer_type(nptr->children[0]);
                     nptr->type = nptr->children[0]->type; 
+                    
                     break;
                 //TODO: unary operator tokens
                 case TOK_UMINUS:
@@ -303,19 +305,7 @@ static void infer_type(node_t *nptr) {
             }
         case NT_LEAF:
             switch (nptr->tok) {
-                case TOK_NUM:
-                    nptr->type = INT_TYPE;
-                    break;
-                case (TOK_TRUE):
-                    nptr->type = BOOL_TYPE;
-                    break;
-                case(TOK_FALSE):
-                    nptr->type = BOOL_TYPE;
-                    break;
-                case(TOK_STR):
-                    nptr->type = STRING_TYPE;
-                    break; 
-                case(TOK_ID):;
+                case TOK_ID:;
                     //nptr->type = ID_TYPE;
                     //or we could look into hash table to pull correct value
                     entry_t* curr = get(nptr->val.sval);
@@ -546,12 +536,15 @@ static void eval_node(node_t *nptr) {
             }
             // For reference, the identity (do-nothing) operator has been implemented for you.
             if (nptr->tok == TOK_IDENTITY) {
+                eval_node(nptr->children[0]);
                 if (nptr->type == STRING_TYPE) {
-                    nptr->val.sval = (char *) malloc(strlen(nptr->children[0]->val.sval));
+                    nptr->val.sval = (char *) malloc(strlen(nptr->children[0]->val.sval) + 1);
                     strcpy(nptr->val.sval, nptr->children[0]->val.sval);
                     // Week 2 TODO: You'll need to make a copy of the string.
-                } else {
+                } else if(nptr->type == INT_TYPE){
                     nptr->val.ival = nptr->children[0]->val.ival;
+                } else {
+                    nptr->val.bval = nptr->children[0]->val.bval;
                 }
             }
             break;
@@ -639,7 +632,6 @@ void eval_root(node_t *nptr) {
  */
 
 void infer_and_eval(node_t *nptr) {
-
     infer_root(nptr);
     eval_root(nptr);
     return;

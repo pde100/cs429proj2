@@ -315,10 +315,15 @@ static void infer_type(node_t *nptr) {
                 case(TOK_STR):
                     nptr->type = STRING_TYPE;
                     break; 
-                case(TOK_ID):
+                case(TOK_ID):;
                     //nptr->type = ID_TYPE;
                     //or we could look into hash table to pull correct value
-                    nptr->type = get(nptr->val.sval)->type;
+                    entry_t* curr = get(nptr->val.sval);
+                    if(curr == NULL) {
+                        handle_error(ERR_UNDEFINED);
+                        return;
+                    }
+                    nptr->type = curr->type;
                     break;   
                 default:
                     break;
@@ -412,6 +417,9 @@ static void eval_node(node_t *nptr) {
 
                             nptr->val.sval = (char*)malloc(strlen(first));
                             
+                            printf("this is first %s", first);
+                            printf("this is second %s", second);
+
 
                             memcpy(nptr->val.sval, first, strlen(first));
 
@@ -497,7 +505,9 @@ static void eval_node(node_t *nptr) {
                             break;
                         }
                     case TOK_ASSIGN:;
+                        printf("this hoe running \n");
                         char* id = nptr->children[0]->val.sval;
+                        nptr->type = nptr->children[0]->type;
                         put(id, nptr->children[1]);
                         break;
                     default:
@@ -551,10 +561,16 @@ static void eval_node(node_t *nptr) {
             break;
         case NT_LEAF:
         //what should base case be
+        printf("this a leaf \n");
             switch(nptr->tok) {
                 case TOK_ID:;
                 char* id = nptr->val.sval;
                 entry_t* entry = get(id);
+
+                if(entry == NULL) {
+                    handle_error(ERR_SYNTAX);
+                    break;
+                }
 
                     if(nptr->type == STRING_TYPE) {
                         nptr->val.sval = (char*)malloc(strlen(entry->val.sval) + 1);

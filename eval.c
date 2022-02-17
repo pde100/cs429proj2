@@ -316,7 +316,7 @@ static void infer_type(node_t *nptr) {
                     nptr->type = STRING_TYPE;
                     break; 
                 case(TOK_ID):
-                    nptr->type = ID_TYPE;
+                    //nptr->type = ID_TYPE;
                     //or we could look into hash table to pull correct value
                     nptr->type = get(nptr->val.sval)->type;
                     break;   
@@ -411,7 +411,10 @@ static void eval_node(node_t *nptr) {
                             char *second = nptr->children[1]->val.sval;
 
                             nptr->val.sval = (char*)malloc(strlen(first));
+                            
+
                             memcpy(nptr->val.sval, first, strlen(first));
+
                             strcat(nptr->val.sval, second);
                             break;
                         } 
@@ -555,7 +558,7 @@ static void eval_node(node_t *nptr) {
 
                     if(nptr->type == STRING_TYPE) {
                         nptr->val.sval = (char*)malloc(strlen(entry->val.sval) + 1);
-                        strcpy(nptr->val.sval, nptr->val.sval);
+                        strcpy(nptr->val.sval, entry->val.sval);
                     } else if(nptr->type == INT_TYPE) {
                         nptr->val.ival = entry->val.ival;
                     } else if(nptr->type == BOOL_TYPE) {

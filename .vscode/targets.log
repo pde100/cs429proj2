@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Feb 17 11:57:11 2022
+# Make data base, printed on Thu Feb 17 14:30:12 2022
 
 # Variables
 
@@ -87,7 +87,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /u/pramitde/cs429/projects/proj2/ci-lab-pde100
 # environment
-VSCODE_IPC_HOOK_CLI = /run/user/41503/vscode-ipc-5178493e-8dba-4262-a4b0-35a72c5ec93c.sock
+VSCODE_IPC_HOOK_CLI = /run/user/41503/vscode-ipc-6a0e4879-298a-4505-a007-ae7cacacc2c7.sock
 # makefile (from 'Makefile', line 18)
 TEST_WEEK_1 := tests/test_week1.txt
 # automatic
@@ -120,6 +120,7 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # makefile (from 'Makefile', line 14)
 SRCS := ci.c handle_args.c interface.c lex.c parse.c eval.c print.c err_handler.c variable.c
+ 
 # environment
 SHLVL = 3
 # makefile (from 'Makefile', line 3)
@@ -259,7 +260,7 @@ all: ci test_week1 test_week2 test_week3 clean
 # Not a target:
 variable.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-17 11:49:35.85357
+#  Last modified 2022-02-17 14:27:07.176873
 #  File has been updated.
 #  Successfully updated.
 
@@ -279,7 +280,6 @@ test_week1: ci
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
- 
 # @ := test_week1
 # automatic
 # % := 
@@ -376,7 +376,7 @@ parse.c:
 
 ci: ci.o handle_args.o interface.o lex.o parse.o eval.o print.o err_handler.o variable.o ci.h node.h
 #  Implicit rule search has not been done.
-#  Last modified 2022-02-17 11:49:40.431586
+#  Last modified 2022-02-17 14:28:52.008851
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 38):
@@ -401,16 +401,17 @@ print.c:
 eval.o: eval.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'eval'
-#  Last modified 2022-02-17 11:40:22.146533
+#  Last modified 2022-02-17 14:28:51.964878
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 31):
+ 
 	${CC} ${CC_OPTIONS} ${CC_FLAGS} $<
 
 variable.o: variable.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'variable'
-#  Last modified 2022-02-17 11:49:40.395554
+#  Last modified 2022-02-17 14:27:12.201834
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 31):
@@ -457,7 +458,7 @@ ci.c:
 # Not a target:
 eval.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-17 11:40:00.295543
+#  Last modified 2022-02-17 14:28:47.574887
 #  File has been updated.
 #  Successfully updated.
 
@@ -475,6 +476,6 @@ eval.c:
 # strcache performance: lookups = 111 / hit rate = 47%
 # hash-table stats:
 # Load=58/8192=1%, Rehash=0, Collisions=2/111=2%
-# Finished Make data base on Thu Feb 17 11:57:11 2022
+# Finished Make data base on Thu Feb 17 14:30:12 2022
 
  

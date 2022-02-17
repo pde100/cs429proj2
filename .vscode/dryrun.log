@@ -5,7 +5,6 @@ gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror 
 gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror interface.c
 gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror lex.c
 gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror parse.c
- 
 gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror eval.c
 gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror print.c
 gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror err_handler.c

@@ -524,7 +524,7 @@ static void eval_node(node_t *nptr) {
                         nptr->val.bval = nptr->children[1]->val.bval;
                         break;
                     } else {
-                        nptr->val.sval = (char*)malloc(strlen(nptr->children[1]->val.sval) + 1);
+                        nptr->val.sval = (char*)malloc(strlen(nptr->children[1]->val.sval));
                         strcpy(nptr->val.sval, nptr->children[1]->val.sval);
                         break;
                     }
@@ -537,7 +537,7 @@ static void eval_node(node_t *nptr) {
                         nptr->val.bval = nptr->children[2]->val.bval;
                         break;
                     } else {
-                        nptr->val.sval = (char*)malloc(strlen(nptr->children[2]->val.sval) + 1);
+                        nptr->val.sval = (char*)malloc(strlen(nptr->children[2]->val.sval));
                         strcpy(nptr->val.sval, nptr->children[2]->val.sval);
                         break;
                     }
@@ -547,7 +547,7 @@ static void eval_node(node_t *nptr) {
             // For reference, the identity (do-nothing) operator has been implemented for you.
             if (nptr->tok == TOK_IDENTITY) {
                 if (nptr->type == STRING_TYPE) {
-                    nptr->val.sval = (char *) malloc(strlen(nptr->children[0]->val.sval) + 1);
+                    nptr->val.sval = (char *) malloc(strlen(nptr->children[0]->val.sval));
                     strcpy(nptr->val.sval, nptr->children[0]->val.sval);
                     // Week 2 TODO: You'll need to make a copy of the string.
                 } else {
@@ -568,7 +568,7 @@ static void eval_node(node_t *nptr) {
                 }
 
                     if(nptr->type == STRING_TYPE) {
-                        nptr->val.sval = (char*)malloc(strlen(entry->val.sval) + 1);
+                        nptr->val.sval = (char*)malloc(strlen(entry->val.sval));
                         strcpy(nptr->val.sval, entry->val.sval);
                     } else if(nptr->type == INT_TYPE) {
                         nptr->val.ival = entry->val.ival;

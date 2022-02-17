@@ -135,7 +135,7 @@ void put(char *id, node_t *nptr) {
         while(curr != NULL) {
             if(strcmp(eptr->id, curr-> id) == 0) {
                 if(eptr->type == STRING_TYPE) {
-                    //curr->val.sval = (char*)malloc(strlen(eptr->val.sval) + 1);
+                    curr->val.sval = (char*)malloc(strlen(eptr->val.sval));
 
                     strcpy(curr->val.sval, eptr->val.sval);
 
@@ -147,7 +147,6 @@ void put(char *id, node_t *nptr) {
                 curr->val.bval = eptr->val.bval;
                 curr->val.fval = eptr->val.fval;
                 */
-                // you have to do like ival, bval, sval stuff
                 curr->type = eptr->type;
 
                 break;

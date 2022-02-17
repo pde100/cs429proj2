@@ -360,6 +360,7 @@ static void infer_root(node_t *nptr) {
  */
 
 static void eval_node(node_t *nptr) {
+    //printf("weve reached eval node \n");
     // check running status - you can ignore this.
     if (terminate || ignore_input) return;
 
@@ -494,11 +495,14 @@ static void eval_node(node_t *nptr) {
                             break;
                         }
                     case TOK_ASSIGN:;
+                        printf("reached assignment safely \n");
                         char* id = nptr->children[0]->val.sval;
                         nptr->type = nptr->children[0]->type;
+                        printf("reached assignment safely \n");
                         put(id, nptr->children[1]);
                         break;
                     default:
+                        printf("reached default case \n");
                         break;
                 }
             }

@@ -135,7 +135,9 @@ void put(char *id, node_t *nptr) {
         while(curr != NULL) {
             if(strcmp(eptr->id, curr-> id) == 0) {
                 if(eptr->type == STRING_TYPE) {
-                    free (curr->val.sval);
+                    if(curr->type == STRING_TYPE) {
+                        free (curr->val.sval);
+                    }
                     curr->val.sval = (char*)malloc(strlen(eptr->val.sval));
 
                     strcpy(curr->val.sval, eptr->val.sval);

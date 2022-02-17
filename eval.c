@@ -348,6 +348,7 @@ static void infer_root(node_t *nptr) {
     // check for assignment
     if (nptr->type == ID_TYPE) {
         infer_type(nptr->children[1]);
+
     } else {
         for (int i = 0; i < 3; ++i) {
             infer_type(nptr->children[i]);
@@ -417,9 +418,6 @@ static void eval_node(node_t *nptr) {
 
                             nptr->val.sval = (char*)malloc(strlen(first));
                             
-                            printf("this is first %s", first);
-                            printf("this is second %s", second);
-
 
                             memcpy(nptr->val.sval, first, strlen(first));
 
@@ -445,7 +443,6 @@ static void eval_node(node_t *nptr) {
 
                                 nptr->val.sval = (char*)malloc(strlen(first) * second);
                                 strcpy(nptr->val.sval, "");
-                                printf("%s", nptr->val.sval);
                                 for(int i = 0; i < second; i++) {
                                     strcat(nptr->val.sval, first);
                                 }
@@ -505,7 +502,6 @@ static void eval_node(node_t *nptr) {
                             break;
                         }
                     case TOK_ASSIGN:;
-                        printf("this hoe running \n");
                         char* id = nptr->children[0]->val.sval;
                         nptr->type = nptr->children[0]->type;
                         put(id, nptr->children[1]);
@@ -561,7 +557,6 @@ static void eval_node(node_t *nptr) {
             break;
         case NT_LEAF:
         //what should base case be
-        printf("this a leaf \n");
             switch(nptr->tok) {
                 case TOK_ID:;
                 char* id = nptr->val.sval;
@@ -600,6 +595,7 @@ static void eval_node(node_t *nptr) {
  */
 
 void eval_root(node_t *nptr) {
+
     if (nptr == NULL) return;
     // check running status
     if (terminate || ignore_input) return;
@@ -614,6 +610,7 @@ void eval_root(node_t *nptr) {
             return;
         }
         put(nptr->children[0]->val.sval, nptr->children[1]);
+
         return;
     }
 
@@ -642,6 +639,7 @@ void eval_root(node_t *nptr) {
  */
 
 void infer_and_eval(node_t *nptr) {
+
     infer_root(nptr);
     eval_root(nptr);
     return;

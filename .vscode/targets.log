@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Thu Feb 17 15:13:25 2022
+# Make data base, printed on Thu Feb 17 15:49:11 2022
 
 # Variables
 
@@ -88,7 +87,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /u/pramitde/cs429/projects/proj2/ci-lab-pde100
 # environment
-VSCODE_IPC_HOOK_CLI = /run/user/41503/vscode-ipc-6d880a05-6824-492b-8e61-6746ce474189.sock
+VSCODE_IPC_HOOK_CLI = /run/user/41503/vscode-ipc-60628217-fe6e-400b-8f04-58bdcd82aa3c.sock
 # makefile (from 'Makefile', line 18)
 TEST_WEEK_1 := tests/test_week1.txt
 # automatic
@@ -212,6 +211,7 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 #  recipe to execute (from 'Makefile', line 31):
 	${CC} ${CC_OPTIONS} ${CC_FLAGS} $<
 
+ 
 # 3 implicit rules, 0 (0.0%) terminal.
 
 # Files
@@ -302,7 +302,6 @@ handle_args.c:
 
 # Not a target:
 err_handler.o:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -336,7 +335,7 @@ parse.c:
 
 ci: ci.o handle_args.o interface.o lex.o parse.o eval.o print.o err_handler.o variable.o ci.h node.h
 #  Implicit rule search has not been done.
-#  Last modified 2022-02-17 14:49:07.896775
+#  Last modified 2022-02-17 15:47:52.803504
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -356,7 +355,7 @@ ci.o: ci.c
 eval.o: eval.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'eval'
-#  Last modified 2022-02-17 14:49:07.850749
+#  Last modified 2022-02-17 15:47:52.766544
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -420,7 +419,7 @@ ci.c:
 # Not a target:
 eval.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-17 14:52:19.992758
+#  Last modified 2022-02-17 15:48:19.544537
 #  File has been updated.
 #  Successfully updated.
 
@@ -438,6 +437,6 @@ eval.c:
 # strcache performance: lookups = 101 / hit rate = 45%
 # hash-table stats:
 # Load=55/8192=1%, Rehash=0, Collisions=2/101=2%
-# Finished Make data base on Thu Feb 17 15:13:25 2022
+# Finished Make data base on Thu Feb 17 15:49:11 2022
 
  

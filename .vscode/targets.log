@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Feb 17 10:53:37 2022
+# Make data base, printed on Thu Feb 17 11:57:11 2022
 
 # Variables
 
@@ -87,7 +87,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /u/pramitde/cs429/projects/proj2/ci-lab-pde100
 # environment
-VSCODE_IPC_HOOK_CLI = /run/user/41503/vscode-ipc-6ef472da-48e3-4377-abe2-90930234c9db.sock
+VSCODE_IPC_HOOK_CLI = /run/user/41503/vscode-ipc-5178493e-8dba-4262-a4b0-35a72c5ec93c.sock
 # makefile (from 'Makefile', line 18)
 TEST_WEEK_1 := tests/test_week1.txt
 # automatic
@@ -179,14 +179,13 @@ VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH = /u/pramitde/.vscode-server/bin/83bd43bc5
 # default
 .RECIPEPREFIX := 
 # default
- 
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
 LANG = C
 # environment
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # variable set hash-table stats:
-# Load=87/1024=8%, Rehash=0, Collisions=12/121=10%
+# Load=87/1024=8%, Rehash=0, Collisions=12/119=10%
 
 # Pattern-specific Variable Values
 
@@ -243,9 +242,10 @@ lex.c:
 
 # Not a target:
 ci.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-01-30 18:52:59.12295
+#  File has been updated.
+#  Successfully updated.
 
 all: ci test_week1 test_week2 test_week3 clean
 #  Command line target.
@@ -254,12 +254,12 @@ all: ci test_week1 test_week2 test_week3 clean
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 
 # Not a target:
 variable.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-17 01:11:16.558099
+#  Last modified 2022-02-17 11:49:35.85357
 #  File has been updated.
 #  Successfully updated.
 
@@ -274,11 +274,38 @@ parse.o: parse.c
 
 test_week1: ci
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+ 
+# @ := test_week1
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := ci
+# automatic
+# | := 
+# automatic
+# < := ci
+# automatic
+# ^ := ci
+# automatic
+# ? := ci
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
 #  recipe to execute (from 'Makefile', line 41):
 	chmod +x driver.sh
 	./driver.sh ${TEST_WEEK_1}
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 print.o: print.c
 #  Implicit rule search has been done.
@@ -329,9 +356,10 @@ test_week2: ci
 
 # Not a target:
 node.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-01-30 18:52:59.136969
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 parse.c:
@@ -348,11 +376,9 @@ parse.c:
 
 ci: ci.o handle_args.o interface.o lex.o parse.o eval.o print.o err_handler.o variable.o ci.h node.h
 #  Implicit rule search has not been done.
-#  Last modified 2022-02-17 00:00:10.177494
+#  Last modified 2022-02-17 11:49:40.431586
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 38):
 	${CC} ${CC_FLAGS} -o $@ ${OBJS}
 
@@ -375,7 +401,7 @@ print.c:
 eval.o: eval.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'eval'
-#  Last modified 2022-02-17 00:00:10.125513
+#  Last modified 2022-02-17 11:40:22.146533
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 31):
@@ -384,27 +410,9 @@ eval.o: eval.c
 variable.o: variable.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'variable'
-#  Last modified 2022-02-07 16:06:16.426974
+#  Last modified 2022-02-17 11:49:40.395554
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := variable.o
-# automatic
-# % := 
-# automatic
-# * := variable
-# automatic
-# + := variable.c
-# automatic
-# | := 
-# automatic
-# < := variable.c
-# automatic
-# ^ := variable.c
-# automatic
-# ? := variable.c
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 31):
 	${CC} ${CC_OPTIONS} ${CC_FLAGS} $<
 
@@ -449,12 +457,12 @@ ci.c:
 # Not a target:
 eval.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-11 14:43:04.906531
+#  Last modified 2022-02-17 11:40:00.295543
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=29/1024=3%, Rehash=0, Collisions=3/91=3%
+# Load=29/1024=3%, Rehash=0, Collisions=3/92=3%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -464,9 +472,9 @@ eval.c:
 # strcache buffers: 1 (0) / strings = 58 / storage = 496 B / avg = 8 B
 # current buf: size = 8162 B / used = 496 B / count = 58 / avg = 8 B
 
-# strcache performance: lookups = 110 / hit rate = 47%
+# strcache performance: lookups = 111 / hit rate = 47%
 # hash-table stats:
-# Load=58/8192=1%, Rehash=0, Collisions=2/110=2%
-# Finished Make data base on Thu Feb 17 10:53:37 2022
+# Load=58/8192=1%, Rehash=0, Collisions=2/111=2%
+# Finished Make data base on Thu Feb 17 11:57:11 2022
 
  

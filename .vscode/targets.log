@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Feb  7 15:29:30 2022
+# Make data base, printed on Thu Feb 17 10:53:37 2022
 
 # Variables
 
@@ -61,7 +61,7 @@ OBJS := ci.o handle_args.o interface.o lex.o parse.o eval.o print.o err_handler.
 # environment
 VSCODE_CWD = /u/pramitde
 # environment
-SSH_CONNECTION = 10.145.238.60 49624 128.83.120.167 22
+SSH_CONNECTION = 10.146.84.53 63792 128.83.120.167 22
 # environment
 PATH = /u/pramitde/.vscode-server/bin/83bd43bc519d15e50c4272c6cf5c1479df196a4d/bin:/lusr/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/bin/mh:/lusr/share/hosts:/lusr/bin/tex:/lusr/games/bin:/lusr/opt/condor/bin:.
 # makefile (from 'Makefile', line 11)
@@ -87,7 +87,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /u/pramitde/cs429/projects/proj2/ci-lab-pde100
 # environment
-VSCODE_IPC_HOOK_CLI = /run/user/41503/vscode-ipc-96779a86-9719-47ad-9abb-3bd855190670.sock
+VSCODE_IPC_HOOK_CLI = /run/user/41503/vscode-ipc-6ef472da-48e3-4377-abe2-90930234c9db.sock
 # makefile (from 'Makefile', line 18)
 TEST_WEEK_1 := tests/test_week1.txt
 # automatic
@@ -125,7 +125,7 @@ SHLVL = 3
 # makefile (from 'Makefile', line 3)
 CC = gcc
 # environment
-XDG_SESSION_ID = 2925
+XDG_SESSION_ID = 1567
 # environment
 USER = pramitde
 # makefile
@@ -147,7 +147,7 @@ MAKEFLAGS = pqrR
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_CLIENT = 10.145.238.60 49624 22
+SSH_CLIENT = 10.146.84.53 63792 22
 # environment
 MAIL = /u/pramitde/mailbox
 # automatic
@@ -179,6 +179,7 @@ VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH = /u/pramitde/.vscode-server/bin/83bd43bc5
 # default
 .RECIPEPREFIX := 
 # default
+ 
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
 LANG = C
@@ -193,9 +194,9 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 
 # Directories
 
-# . (device 62, inode 3983533906): 28 files, no impossibilities.
+# . (device 62, inode 3983533906): 37 files, no impossibilities.
 
-# 28 files, no impossibilities in 1 directories.
+# 37 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -215,17 +216,30 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 
 # Files
 
-# Not a target:
-interface.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+interface.o: interface.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'interface'
+#  Last modified 2022-02-07 16:04:02.534979
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	${CC} ${CC_OPTIONS} ${CC_FLAGS} $<
+
+handle_args.o: handle_args.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'handle_args'
+#  Last modified 2022-02-07 16:04:02.487052
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	${CC} ${CC_OPTIONS} ${CC_FLAGS} $<
 
 # Not a target:
-handle_args.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+lex.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-30 18:52:59.135944
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 ci.h:
@@ -243,10 +257,20 @@ all: ci test_week1 test_week2 test_week3 clean
 # Load=0/32=0%, Rehash=0, Collisions=0/6=0%
 
 # Not a target:
-parse.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+variable.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-17 01:11:16.558099
+#  File has been updated.
+#  Successfully updated.
+
+parse.o: parse.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'parse'
+#  Last modified 2022-02-07 16:04:02.639973
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	${CC} ${CC_OPTIONS} ${CC_FLAGS} $<
 
 test_week1: ci
 #  Implicit rule search has not been done.
@@ -256,11 +280,14 @@ test_week1: ci
 	chmod +x driver.sh
 	./driver.sh ${TEST_WEEK_1}
 
-# Not a target:
-print.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+print.o: print.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'print'
+#  Last modified 2022-02-07 16:06:16.330032
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	${CC} ${CC_OPTIONS} ${CC_FLAGS} $<
 
 # Not a target:
 Makefile:
@@ -270,10 +297,27 @@ Makefile:
 #  Successfully updated.
 
 # Not a target:
-err_handler.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+interface.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-30 19:01:26.323908
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+handle_args.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-30 18:52:59.132959
+#  File has been updated.
+#  Successfully updated.
+
+err_handler.o: err_handler.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'err_handler'
+#  Last modified 2022-02-07 16:06:16.381958
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	${CC} ${CC_OPTIONS} ${CC_FLAGS} $<
 
 test_week2: ci
 #  Implicit rule search has not been done.
@@ -289,7 +333,13 @@ node.h:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
+# Not a target:
+parse.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-30 18:52:59.138942
+#  File has been updated.
+#  Successfully updated.
+
 # Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
@@ -298,7 +348,7 @@ node.h:
 
 ci: ci.o handle_args.o interface.o lex.o parse.o eval.o print.o err_handler.o variable.o ci.h node.h
 #  Implicit rule search has not been done.
-#  Last modified 2022-01-31 18:50:49.190001
+#  Last modified 2022-02-17 00:00:10.177494
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -309,41 +359,54 @@ ci: ci.o handle_args.o interface.o lex.o parse.o eval.o print.o err_handler.o va
 ci.o: ci.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'ci'
-#  File does not exist.
+#  Last modified 2022-02-07 16:04:02.446008
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := ci.o
-# automatic
-# % := 
-# automatic
-# * := ci
-# automatic
-# + := ci.c
-# automatic
-# | := 
-# automatic
-# < := ci.c
-# automatic
-# ^ := ci.c
-# automatic
-# ? := ci.c
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 31):
 	${CC} ${CC_OPTIONS} ${CC_FLAGS} $<
 
 # Not a target:
-eval.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+print.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-30 18:52:59.140919
+#  File has been updated.
+#  Successfully updated.
 
-# Not a target:
-variable.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+eval.o: eval.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'eval'
+#  Last modified 2022-02-17 00:00:10.125513
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	${CC} ${CC_OPTIONS} ${CC_FLAGS} $<
+
+variable.o: variable.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'variable'
+#  Last modified 2022-02-07 16:06:16.426974
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := variable.o
+# automatic
+# % := 
+# automatic
+# * := variable
+# automatic
+# + := variable.c
+# automatic
+# | := 
+# automatic
+# < := variable.c
+# automatic
+# ^ := variable.c
+# automatic
+# ? := variable.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/15=13%
+#  recipe to execute (from 'Makefile', line 31):
+	${CC} ${CC_OPTIONS} ${CC_FLAGS} $<
 
 clean:
 #  Implicit rule search has not been done.
@@ -352,11 +415,21 @@ clean:
 #  recipe to execute (from 'Makefile', line 53):
 	${RM} *.o *.so _output*
 
+lex.o: lex.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'lex'
+#  Last modified 2022-02-07 16:04:02.587032
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 31):
+	${CC} ${CC_OPTIONS} ${CC_FLAGS} $<
+
 # Not a target:
-lex.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+err_handler.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-30 18:52:59.128926
+#  File has been updated.
+#  Successfully updated.
 
 test_week3: ci
 #  Implicit rule search has not been done.
@@ -373,20 +446,27 @@ ci.c:
 #  File has been updated.
 #  Successfully updated.
 
+# Not a target:
+eval.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-11 14:43:04.906531
+#  File has been updated.
+#  Successfully updated.
+
 # files hash-table stats:
-# Load=21/1024=2%, Rehash=0, Collisions=0/59=0%
+# Load=29/1024=3%, Rehash=0, Collisions=3/91=3%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 50 / storage = 432 B / avg = 8 B
-# current buf: size = 8162 B / used = 432 B / count = 50 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 58 / storage = 496 B / avg = 8 B
+# current buf: size = 8162 B / used = 496 B / count = 58 / avg = 8 B
 
-# strcache performance: lookups = 77 / hit rate = 35%
+# strcache performance: lookups = 110 / hit rate = 47%
 # hash-table stats:
-# Load=50/8192=1%, Rehash=0, Collisions=2/77=3%
-# Finished Make data base on Mon Feb  7 15:29:30 2022
+# Load=58/8192=1%, Rehash=0, Collisions=2/110=2%
+# Finished Make data base on Thu Feb 17 10:53:37 2022
 
  

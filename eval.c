@@ -241,6 +241,22 @@ static void infer_type(node_t *nptr) {
                         nptr->type = BOOL_TYPE;
                         break;
                     }
+                case TOK_ASSIGN:
+                    for (int i = 0; i < 3; ++i) {
+                        infer_type(nptr->children[i]);
+                    }
+                    if(nptr->children[2] != NULL) {
+                        handle_error(ERR_TYPE);
+                        break;
+                    }
+                    if(nptr->children[0]->type != ID_TYPE || nptr->children[1]->type == ID_TYPE) {
+                        handle_error(ERR_TYPE);
+                        break;
+                    } else {
+                        nptr->type = nptr->children[1]->type;
+                        break;
+                    }
+                    break;
                 //TODO: ternary operator types
                 case TOK_QUESTION:
                     for (int i = 0; i < 3; ++i) {
@@ -282,7 +298,6 @@ static void infer_type(node_t *nptr) {
                             break;
                         }
                     }
-                
                 default:
                     break;
             }
@@ -300,6 +315,11 @@ static void infer_type(node_t *nptr) {
                 case(TOK_STR):
                     nptr->type = STRING_TYPE;
                     break; 
+                case(TOK_ID):
+                    nptr->type = ID_TYPE;
+                    //or we could look into hash table to pull correct value
+                    nptr->type = get(nptr->val.sval)->type;
+                    break;   
                 default:
                     break;
             }
@@ -473,6 +493,10 @@ static void eval_node(node_t *nptr) {
                             nptr->val.bval = strcmp(first, second) == 0;
                             break;
                         }
+                    case TOK_ASSIGN:;
+                        char* id = nptr->children[0]->val.sval;
+                        put(id, nptr->children[1]);
+                        break;
                     default:
                         break;
                 }
@@ -491,6 +515,7 @@ static void eval_node(node_t *nptr) {
                         nptr->val.bval = nptr->children[1]->val.bval;
                         break;
                     } else {
+                        nptr->val.sval = (char*)malloc(strlen(nptr->children[1]->val.sval) + 1);
                         strcpy(nptr->val.sval, nptr->children[1]->val.sval);
                         break;
                     }
@@ -503,6 +528,7 @@ static void eval_node(node_t *nptr) {
                         nptr->val.bval = nptr->children[2]->val.bval;
                         break;
                     } else {
+                        nptr->val.sval = (char*)malloc(strlen(nptr->children[2]->val.sval) + 1);
                         strcpy(nptr->val.sval, nptr->children[2]->val.sval);
                         break;
                     }
@@ -512,6 +538,7 @@ static void eval_node(node_t *nptr) {
             // For reference, the identity (do-nothing) operator has been implemented for you.
             if (nptr->tok == TOK_IDENTITY) {
                 if (nptr->type == STRING_TYPE) {
+                    nptr->val.sval = (char *) malloc(strlen(nptr->children[0]->val.sval) + 1);
                     strcpy(nptr->val.sval, nptr->children[0]->val.sval);
                     // Week 2 TODO: You'll need to make a copy of the string.
                 } else {
@@ -521,6 +548,25 @@ static void eval_node(node_t *nptr) {
             break;
         case NT_LEAF:
         //what should base case be
+            switch(nptr->tok) {
+                case TOK_ID:;
+                char* id = nptr->val.sval;
+                entry_t* entry = get(id);
+
+                    if(nptr->type == STRING_TYPE) {
+                        nptr->val.sval = (char*)malloc(strlen(entry->val.sval) + 1);
+                        strcpy(nptr->val.sval, nptr->val.sval);
+                    } else if(nptr->type == INT_TYPE) {
+                        nptr->val.ival = entry->val.ival;
+                    } else if(nptr->type == BOOL_TYPE) {
+                        nptr->val.bval = entry->val.bval;
+                    } else {
+                        handle_error(ERR_SYNTAX);
+                    }
+                    break;
+                default:
+                    break;
+            }
             break;
         default:
             break;

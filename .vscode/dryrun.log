@@ -1,4 +1,4 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/u/pramitde/cs429/projects/proj2/ci-lab-pde100'
 gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror ci.c
 gcc -c -fomit-frame-pointer -fno-asynchronous-unwind-tables -ggdb -Wall -Werror handle_args.c

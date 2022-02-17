@@ -113,6 +113,62 @@ entry_t * init_entry(char *id, node_t *nptr) {
 
 void put(char *id, node_t *nptr) {
     // Week 3 TODO: Implement adding to the hashtable.
+
+    entry_t* eptr = init_entry(id, nptr);
+    unsigned long index = hash_function(id);
+    if (! var_table) 
+        return;
+    
+    if(var_table->entries[index] == NULL) {
+        var_table->entries[index] = eptr;
+    } else {
+        //use while loop to go to furthest node in linked list
+        entry_t* curr = var_table->entries[index];
+
+        //check if curr node id is same as eptr id
+        //if it is, modify curr node and break 
+        //if it is not, check if next node is null 
+        //if it is null, add eptr to next
+        //if it is not null, repeat above process
+
+         
+        while(curr != NULL) {
+            if(strcmp(eptr->id, curr-> id) == 0) {
+                if(eptr->type == STRING_TYPE) {
+                    strcpy(curr->val.sval, eptr->val.sval);
+                } else {
+                    curr->val = eptr->val;
+                }
+                /*
+                curr->val.ival = eptr->val.ival;
+                curr->val.bval = eptr->val.bval;
+                curr->val.fval = eptr->val.fval;
+                */
+                // you have to do like ival, bval, sval stuff
+                curr->type = eptr->type;
+
+                break;
+            } else {
+                if(curr->next == NULL) {
+                    curr->next = eptr;
+                    break;
+                } else {
+                    curr = curr->next;
+                }
+            }
+        }
+    }
+
+
+     
+    
+    
+
+
+
+
+
+
     return;
 }
 
@@ -124,6 +180,25 @@ void put(char *id, node_t *nptr) {
 
 entry_t* get(char* id) {
     // Week 3 TODO: Implement retrieving from the hasttable.
+
+    unsigned long index = hash_function(id);
+    if (! var_table) 
+        return NULL;
+    
+    entry_t* curr = var_table->entries[index];
+
+    //if curr is null, return null 
+    //if it not null, check if id matches
+    //if id matches, return entry 
+    //if id does not match, try above steps with next entry
+
+    while(curr != NULL) {
+        if(strcmp(id, curr->id) == 0) {
+            return curr;
+        } else {
+            curr = curr->next;
+        }
+    }
     return NULL;
 }
 

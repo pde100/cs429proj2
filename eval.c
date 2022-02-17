@@ -406,12 +406,14 @@ static void eval_node(node_t *nptr) {
                             char *first = nptr->children[0]->val.sval;
                             char *second = nptr->children[1]->val.sval;
 
-                            nptr->val.sval = (char*)malloc(strlen(first));
+                            //nptr->val.sval = (char*)malloc(strlen(first));
+                            char* cat = (char*)malloc(strlen(first) + 1);
                             
-
-                            memcpy(nptr->val.sval, first, strlen(first));
-
-                            strcat(nptr->val.sval, second);
+                            strcpy(cat, first);
+                            //memcpy(nptr->val.sval, first, strlen(first));
+                            strcat(cat, second);
+                            //strcat(nptr->val.sval, second);
+                            nptr->val.sval = cat;
                             break;
                         } 
                         break;
@@ -431,7 +433,7 @@ static void eval_node(node_t *nptr) {
                                 char *first = nptr->children[0]->val.sval;
                                 int second = nptr->children[1]->val.ival;
 
-                                nptr->val.sval = (char*)malloc(strlen(first) * second);
+                                nptr->val.sval = (char*)malloc(strlen(first) * second + 1);
                                 strcpy(nptr->val.sval, "");
                                 for(int i = 0; i < second; i++) {
                                     strcat(nptr->val.sval, first);
@@ -514,7 +516,7 @@ static void eval_node(node_t *nptr) {
                         nptr->val.bval = nptr->children[1]->val.bval;
                         break;
                     } else {
-                        nptr->val.sval = (char*)malloc(strlen(nptr->children[1]->val.sval));
+                        nptr->val.sval = (char*)malloc(strlen(nptr->children[1]->val.sval) + 1);
                         strcpy(nptr->val.sval, nptr->children[1]->val.sval);
                         break;
                     }
@@ -527,7 +529,7 @@ static void eval_node(node_t *nptr) {
                         nptr->val.bval = nptr->children[2]->val.bval;
                         break;
                     } else {
-                        nptr->val.sval = (char*)malloc(strlen(nptr->children[2]->val.sval));
+                        nptr->val.sval = (char*)malloc(strlen(nptr->children[2]->val.sval) + 1);
                         strcpy(nptr->val.sval, nptr->children[2]->val.sval);
                         break;
                     }
@@ -554,14 +556,15 @@ static void eval_node(node_t *nptr) {
                 case TOK_ID:;
                 char* id = nptr->val.sval;
                 entry_t* entry = get(id);
+                free (nptr->val.sval);
 
                 if(entry == NULL) {
                     handle_error(ERR_SYNTAX);
                     break;
                 }
-
                     if(nptr->type == STRING_TYPE) {
-                        nptr->val.sval = (char*)malloc(strlen(entry->val.sval));
+                        
+                        nptr->val.sval = (char*)malloc(strlen(entry->val.sval) + 1);
                         strcpy(nptr->val.sval, entry->val.sval);
                     } else if(nptr->type == INT_TYPE) {
                         nptr->val.ival = entry->val.ival;
@@ -645,10 +648,12 @@ void infer_and_eval(node_t *nptr) {
 
 char *strrev(char *str) {
     // Week 2 TODO: Implement copying and reversing the string.
-    char *rev = (char*)malloc(strlen(str));
+    char *rev = (char*)malloc(strlen(str) + 1);
+    strcpy(rev, str);
     for(int i = strlen(str) - 1; i >= 0; i--) {
         rev[strlen(str) - 1 - i] = str[i];
     }
+    //printf("%s",rev);
     return rev;
 }
 
@@ -665,9 +670,10 @@ void cleanup(node_t *nptr) {
     for(int i = 0; i < 3; i++) {
         cleanup(nptr->children[i]);
     }
-
+    //free(nptr->val.sval);
+    if((nptr->type == STRING_TYPE || nptr->type == ID_TYPE)&& nptr->val.sval != NULL) {
+        free(nptr->val.sval);
+    }
     free(nptr);
-
-    
     return;
 }
